@@ -1,0 +1,245 @@
+/* Charity: water Brand Colors & Fonts
+
+Primary Colors:
+- Yellow:     #FFC907
+- Blue:       #2E9DF7
+
+Secondary Colors:
+- Light Blue: #8BD1CB
+- Green:      #4FCB53
+- Orange:     #FF902A
+- Red:        #F5402C
+- Dark Green: #159A48
+- Pink:       #F16061
+
+Fonts:
+- Proxima Nova
+- Avenir
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f4fbff, #eef4f7);
+  font-family: "Montserrat", Arial, sans-serif;
+  padding: 24px;
+  color: #131313;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.game-title {
+  color: #131313;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.game-tagline {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.score-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  width: 800px;
+  padding: 14px 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+  border-top: 5px solid #ffc907;
+}
+
+.score,
+.timer,
+.difficulty-label {
+  font-size: 22px;
+  font-weight: 700;
+  color: #131313;
+}
+
+#difficulty {
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Montserrat", Arial, sans-serif;
+  background-color: #fff;
+}
+
+#start-btn,
+#reset-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Montserrat", Arial, sans-serif;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+#start-btn:hover,
+#reset-btn:hover {
+  transform: translateY(-1px);
+}
+
+#start-btn {
+  background-color: #ffc907;
+  color: #131313;
+}
+
+#start-btn:hover {
+  background-color: #e6b800;
+}
+
+#reset-btn {
+  background-color: #2e9df7;
+  color: white;
+}
+
+#reset-btn:hover {
+  background-color: #1e86d8;
+}
+
+#feedback-message,
+#milestone-message,
+#end-message {
+  min-height: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+#feedback-message {
+  font-size: 20px;
+  color: #131313;
+}
+
+#milestone-message {
+  font-size: 20px;
+  color: #ff902a;
+}
+
+#end-message {
+  font-size: 24px;
+  color: #159a48;
+}
+
+#game-container {
+  width: 800px;
+  height: 600px;
+  background: linear-gradient(to bottom, #dff4ff, #ffffff);
+  border: 2px solid #333;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.water-drop {
+  position: absolute;
+  border-radius: 50%;
+  animation: dropFall linear forwards;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  background-color: #2e9df7;
+  box-shadow: inset -8px -8px 0 rgba(255, 255, 255, 0.18);
+}
+
+.water-drop:hover {
+  transform: scale(1.08);
+}
+
+.bad-drop {
+  background-color: #f5402c;
+}
+
+@keyframes dropFall {
+  from {
+    transform: translateY(-80px);
+  }
+  to {
+    transform: translateY(680px);
+  }
+}
+
+.game-footer {
+  width: 800px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-bottom: 5px solid #2e9df7;
+}
+
+.game-footer p {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.game-footer a {
+  color: #2e9df7;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.game-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 850px) {
+  .score-panel,
+  #game-container,
+  .game-footer {
+    width: 95vw;
+  }
+
+  #game-container {
+    height: 70vh;
+  }
+
+  .game-title {
+    font-size: 38px;
+  }
+
+  .score,
+  .timer,
+  .difficulty-label {
+    font-size: 18px;
+  }
+
+  #feedback-message,
+  #milestone-message,
+  #end-message {
+    width: 95vw;
+  }
+}
